@@ -1,0 +1,40 @@
+.nav {
+  &__list {
+    list-style: none;
+
+    display: flex;
+    gap: 32px;
+  }
+
+  &__item {
+    width: fit-content;
+  }
+
+  &__link {
+    font-size: 15px;
+    line-height: 16px;
+    text-decoration: none;
+    color: $primary-text-color;
+
+    &::after {
+      content: "";
+      display: block;
+      background-color: #111;
+      width: 0;
+      height: 1px;
+      transition: width $transition-duration;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  // @media (max-width: 1100px) {
+  //   & {
+  //     &__list {
+  //       flex-direction: column;
+  //     }
+  //   }
+  // }
+}

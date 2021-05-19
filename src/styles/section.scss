@@ -1,0 +1,57 @@
+.section {
+  background-color: #efedff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 720px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 72px;
+    width: 585px;
+
+    margin-bottom: 32px;
+  }
+
+  &__info {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+
+    width: 483px;
+    margin-bottom: 48px;
+  }
+
+  &__image {
+    width: 482px;
+    height: 519px;
+    object-fit: contain;
+  }
+
+  &__button {
+    width: 257px;
+    height: 54px;
+    background-color: $default-button-color;
+    border: none;
+    border-radius: 60px;
+
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  @media (max-width: 1300px) {
+    & {
+      flex-wrap: nowrap;
+      align-items: center;
+      height: auto;
+
+      text-align: center;
+    }
+
+    &__image {
+      margin-top: 32px;
+    }
+  }
+}

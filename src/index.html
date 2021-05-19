@@ -3,11 +3,87 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <title>Test-task</title>
+    <link rel="stylesheet" href="./styles/index.scss">
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <div class="page-content">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__logo">logo</div>
+
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/" class="nav__link">How it works</a>
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link">About</a>
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link">Instructions</a>
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link">Accounts</a>
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link">Platforms</a>
+              </li>
+              <li class="nav__item">
+                <a href="/" class="nav__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header__button-container">
+          <select class="header__language-select">
+            <option value="en" class="header__language-option">en</option>
+            <option value="en" class="header__language-option">ru</option>
+          </select>
+          <button
+            class="header__sign-in-button"
+            type="button"
+          >
+            <a href="/" class="header__sign-in-link">Sign in for free</a>
+          </button>
+          <button
+            type="button"
+            class="header__hamburger-open"
+          >
+          </button>
+          <button
+            type="button"
+            class="header__hamburger-close"
+          >
+          </button>
+        </div>
+
+      </header>
+
+      <main class="main">
+        <section class="main__section section section--grey">
+          <h1 class="section__title">Trade everywhere. Invest here!</h1>
+          <p class="section__info">
+            We provide only the best trading software.
+            The trading&nbsp;terminal MetaTrader4 is the most popular and convenient
+            platform for access to global exchanges. You can work anywhere.
+          </p>
+          <button class="section__button">start trading</button>
+          <img
+            src="./images/diagram.svg"
+            alt="diagram"
+            class="section__image"
+          >
+        </section>
+      </main>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous">
+    </script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
