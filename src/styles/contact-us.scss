@@ -1,0 +1,145 @@
+.contact-us {
+  background-color: #f2f0ff;
+  transition: all $transition-duration;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    width: 100%;
+    max-width: 1440px;
+    min-width: 320px;
+    padding: 120px;
+
+    transition: all $transition-duration;
+  }
+
+  &__title {
+    font-size: 56px;
+    line-height: 66px;
+    transition: all $transition-duration;
+  }
+
+  &__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 32px 0 24px;
+  }
+
+  &__info-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 27px;
+    width: 100%;
+    max-width: 483px;
+    color: #4f4f4f;
+
+    &--main {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    &--address {
+      max-width: 450px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contacts-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 585px;
+    height: 471px;
+    background-color: $white;
+    border: 2px solid #6248ff;
+    border-radius: 20px;
+    margin-top: 14px;
+    padding: 80px;
+    transition: all $transition-duration;
+  }
+
+  &__name,
+  &__email {
+    @include input-styles;
+  }
+
+  &__message {
+    @include input-styles;
+    height: 89px;
+  }
+
+  &__button {
+    width: 172px;
+    height: 54px;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-top: 16px;
+    gap: 0;
+
+    color: #fff;
+  }
+
+  @media (max-width: 1310px) {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+
+    &__form {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    &__wrapper {
+      padding: 48px 130px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__info-container {
+      gap: 32px;
+    }
+
+    &__form {
+      height: 100%;
+      padding: 80px 42px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    &__wrapper {
+      padding: 48px 20px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    &__form {
+      padding: 48px 16px;
+    }
+  }
+}

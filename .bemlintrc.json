@@ -3,7 +3,8 @@
   "modifierDivider": "--",
   "ignore": [
     "node_modules",
-    "dist"
+    "dist",
+    "src"
   ],
   "rules": {
     "one-block": true,

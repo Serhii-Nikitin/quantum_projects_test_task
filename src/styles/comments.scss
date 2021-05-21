@@ -7,7 +7,7 @@
     width: 100%;
     max-width: 1440px;
     min-width: 320px;
-    padding: 0 120px 120px;
+    padding: 0 120px 195px;
 
     transition: all $transition-duration;
   }
@@ -17,7 +17,8 @@
     position: relative;
     width: 483px;
     height: fit-content;
-    margin: 0 0 68px;
+    margin: 0 0 39px;
+    transition: all $transition-duration;
 
     &::after {
       content: "";
@@ -25,7 +26,7 @@
       display: block;
       background-color: #6248ff;
       opacity: 0.1;
-      width: 355px;
+      width: 168px;
       height: 72px;
       bottom: -5px;
       left: 0;
@@ -43,7 +44,12 @@
     border-radius: 50%;
     background-color: transparent;
     border: 1px solid #6248ff;
+    cursor: pointer;
     transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     &:disabled {
       border: 1px solid #e0e0e0;
@@ -61,7 +67,9 @@
   &__comment-content {
     position: absolute;
     right: 120px;
+    top: 27px;
     width: 585px;
+    transition: all $transition-duration;
   }
 
   &__comment-container {
@@ -75,6 +83,7 @@
   &__comment-header {
     display: flex;
     gap: 30px;
+    margin-bottom: 17px;
   }
 
   &__user-image {
@@ -105,7 +114,7 @@
     position: relative;
     font-size: 24px;
     line-height: 29px;
-    margin: 17px 0 31px;
+    margin-bottom: 31px;
 
     &::before {
       position: absolute;
@@ -117,6 +126,7 @@
       height: 27px;
       background: url("../images/quotes.svg") no-repeat center;
       background-size: contain;
+      margin-bottom: 17px;
     }
   }
 
@@ -128,7 +138,7 @@
 
   @media (max-width: 1310px) {
     &__wrapper {
-      gap: 215px;
+      gap: 180px;
     }
 
     &__subtitle {
@@ -146,7 +156,6 @@
 
     &__comment-container {
       &--active {
-        display: flex;
         align-items: center;
         text-align: center;
         flex-direction: column;
@@ -165,6 +174,71 @@
         left: calc(50% - (33px / 2));
         top: calc(-16px - 27px);
       }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    &__wrapper {
+      padding: 0 40px 120px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    &__button {
+      z-index: 1;
+    }
+
+    &__comment-content {
+      width: 508px;
+      left: calc(50% - (508px / 2));
+    }
+  }
+
+  @media (max-width: 750px) {
+    &__wrapper {
+      padding: 0 20px 80px;
+      gap: 330px;
+    }
+
+    &__comment-content {
+      width: 508px;
+      top: 188px;
+      left: calc(50% - (508px / 2));
+    }
+  }
+
+  @media (max-width: 510px) {
+    &__wrapper {
+      gap: 485px;
+    }
+
+    &__subtitle {
+      width: 280px;
+      font-size: 40px;
+      line-height: 44px;
+      margin: 0;
+
+      &::after {
+        width: 254px;
+        height: 50px;
+      }
+    }
+
+    &__comment-content {
+      width: 280px;
+      top: 128px;
+      left: calc(50% - (280px / 2));
+    }
+
+    &__comment-body {
+      &::before {
+        background: url("../images/quotes_small_screen.svg") no-repeat center;
+        background-size: contain;
+      }
+    }
+
+    &__comments-footer {
+      color: #4f62f6;
     }
   }
 }
