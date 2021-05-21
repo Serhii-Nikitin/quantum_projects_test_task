@@ -1,23 +1,27 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "wrapper";
+@import "button";
 @import "header";
 @import "nav";
-@import "main";
 @import "section";
+@import "section-get-started";
+@import "comments";
 
 html {
-  font-family: "Museo Sans Cyrl", sans-serif;
+  font-family: "MuseoSansCyrl", sans-serif;
   font-weight: 500;
   color: $primary-text-color;
 }
 
 body {
   background-color: $white;
+  margin: auto;
 }
 
-.page-content {
-  margin: auto;
-  width: 100%;
-  max-width: 1440px;
-}
+// .page-content {
+//   margin: auto;
+//   width: 100%;
+//   max-width: 1440px;
+// }

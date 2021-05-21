@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="./styles/index.scss">
   </head>
   <body>
-    <div class="page-content">
-      <header class="header">
+    <header class="header">
+      <div class="wrapper">
         <div class="header__container">
           <div class="header__logo">logo</div>
 
@@ -42,42 +42,192 @@
             <option value="en" class="header__language-option">ru</option>
           </select>
           <button
-            class="header__sign-in-button"
+            class="header__sign-in-button button"
             type="button"
           >
             <a href="/" class="header__sign-in-link">Sign in for free</a>
           </button>
           <button
             type="button"
-            class="header__hamburger-open"
-          >
-          </button>
-          <button
-            type="button"
-            class="header__hamburger-close"
+            class="header__hamburger header__hamburger--open"
           >
           </button>
         </div>
 
-      </header>
+      </div>
+    </header>
 
-      <main class="main">
-        <section class="main__section section section--grey">
-          <h1 class="section__title">Trade everywhere. Invest here!</h1>
-          <p class="section__info">
-            We provide only the best trading software.
-            The trading&nbsp;terminal MetaTrader4 is the most popular and convenient
-            platform for access to global exchanges. You can work anywhere.
-          </p>
-          <button class="section__button">start trading</button>
+    <main class="main">
+      <section class="main__section section section--violet">
+        <div class="section__wrapper">
+          <div class="section__info-container">
+            <h1 class="section__title">Trade everywhere. Invest here!</h1>
+            <p class="section__info">
+              We provide only the best trading software.
+              The trading terminal MetaTrader4 is the most popular and convenient
+              platform for access to global exchanges. You can work anywhere.
+            </p>
+            <button class="section__button button">start trading</button>
+          </div>
           <img
             src="./images/diagram.svg"
             alt="diagram"
             class="section__image"
           >
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+
+      <section class="main__section section section-get-started">
+        <div class="section-get-started__wrapper">
+          <h2 class="section-get-started__subtitle">
+            Getting Started Is Fast & Easy
+          </h2>
+          <div class="section-get-started__map">
+            <div class="section-get-started__item section-get-started__item--first">
+              <p class="section-get-started__item-number">01.</p>
+              <h3 class="section-get-started__item-title">Register</h3>
+              <p class="section-get-started__item-info">
+                Complete the simple registration to get your trading credentials.
+              </p>
+            </div>
+            <div class="section-get-started__item section-get-started__item--second">
+              <p class="section-get-started__item-number">02.</p>
+              <h3 class="section-get-started__item-title">Verification</h3>
+              <p class="section-get-started__item-info">
+                Big Invest is required to verify your identity,
+                upload your documents quickly and get approved in minutes.
+              </p>
+            </div>
+            <div class="section-get-started__item section-get-started__item--third">
+              <p class="section-get-started__item-number">03.</p>
+              <h3 class="section-get-started__item-title">Deposit funds</h3>
+              <p class="section-get-started__item-info">
+                Big Invest accepts credit cards and bank wires.
+                Just use the secure deposit form and follow the steps.
+              </p>
+            </div>
+            <div class="section-get-started__item section-get-started__item--four">
+              <p class="section-get-started__item-number">04.</p>
+              <h3 class="section-get-started__item-title">Start Trading</h3>
+              <p class="section-get-started__item-info">
+                Once your deposit has been credited, you can begin trading instantly.
+                In no time you will see profits rolling into your account.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="main__section section comments">
+        <div class="comments__wrapper">
+          <h2 class="comments__subtitle">
+            People love Big Invest
+          </h2>
+          <div class="comments__buttons-container">
+            <button
+              type="button"
+              class="comments__button comments__button--left"
+              disabled
+            >
+            </button>
+            <button
+              type="button"
+              class="comments__button comments__button--right"
+            >
+            </button>
+          </div>
+          <div class="comments__comment-content">
+            <div class="comments__comment-container comments__comment-container--active">
+              <div class="comments__comment-header">
+                <img
+                  src="./images/user_1.jpg"
+                  alt="user-image"
+                  class="comments__user-image"
+                >
+                <div class="comments__user-info">
+                  <h3 class="comments__user-name">Albert Abello</h3>
+                  <p class="comments__user-role">Director of Growth</p>
+                </div>
+              </div>
+              <p class="comments__comment-body">
+                This magical product actually works!
+                It has radically changed the way we build our audiences.
+                Increasing new customer sales by 6x in our most mature market.
+              </p>
+              <p class="comments__comment-footer">01 / 04</p>
+            </div>
+            <div class="
+              comments__comment-container
+              "
+            >
+              <div class="comments__comment-header">
+                <img
+                  src="./images/user_2.jpg"
+                  alt="user-image"
+                  class="comments__user-image"
+                >
+                <div class="comments__user-info">
+                  <h3 class="comments__user-name">Jason Statham</h3>
+                  <p class="comments__user-role">Actor</p>
+                </div>
+              </div>
+              <p class="comments__comment-body">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Aliquid fuga molestiae veritatis perferendis totam
+                consequuntur deserunt accusantium numquam. Labore, architecto?
+              </p>
+              <p class="comments__comment-footer">02 / 04</p>
+            </div>
+            <div class="
+              comments__comment-container
+              "
+            >
+              <div class="comments__comment-header">
+                <img
+                  src="./images/user_3.jpg"
+                  alt="user-image"
+                  class="comments__user-image"
+                >
+                <div class="comments__user-info">
+                  <h3 class="comments__user-name">Jackie Chan</h3>
+                  <p class="comments__user-role">Actor</p>
+                </div>
+              </div>
+              <p class="comments__comment-body">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corrupti quos suscipit laboriosam quidem, quaerat alias
+                nostrum excepturi deleniti praesentium voluptate.
+              </p>
+              <p class="comments__comment-footer">03 / 04</p>
+            </div>
+            <div class="
+              comments__comment-container
+              "
+            >
+              <div class="comments__comment-header">
+                <img
+                  src="./images/user_4.jpg"
+                  alt="user-image"
+                  class="comments__user-image"
+                >
+                <div class="comments__user-info">
+                  <h3 class="comments__user-name">Iron Man</h3>
+                  <p class="comments__user-role">Superhero</p>
+                </div>
+              </div>
+              <p class="comments__comment-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Mollitia quos animi eveniet, exercitationem est, eaque
+                praesentium tenetur quisquam molestias ipsam maiores
+                ad aliquid, numquam incidunt.
+              </p>
+              <p class="comments__comment-footer">04 / 04</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"

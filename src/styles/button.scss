@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $default-button-color;
+  border: none;
+  border-radius: 60px;
+
+  cursor: pointer;
+  transition: background-color $transition-duration;
+
+  &:hover {
+    background-color: $hover-button-color;
+  }
+
+  &:active {
+    background-color: $active-button-color;
+  }
+}

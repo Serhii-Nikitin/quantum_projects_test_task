@@ -1,0 +1,170 @@
+.comments {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 1440px;
+    min-width: 320px;
+    padding: 0 120px 120px;
+
+    transition: all $transition-duration;
+  }
+
+  &__subtitle {
+    @include subtitle-styles;
+    position: relative;
+    width: 483px;
+    height: fit-content;
+    margin: 0 0 68px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: #6248ff;
+      opacity: 0.1;
+      width: 355px;
+      height: 72px;
+      bottom: -5px;
+      left: 0;
+    }
+  }
+
+  &__buttons-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #6248ff;
+    transition: all $transition-duration;
+
+    &:disabled {
+      border: 1px solid #e0e0e0;
+    }
+
+    &--left {
+      background: url("../images/arrow_left.svg") no-repeat center;
+    }
+
+    &--right {
+      background: url("../images/arrow_right.svg") no-repeat center;
+    }
+  }
+
+  &__comment-content {
+    position: absolute;
+    right: 120px;
+    width: 585px;
+  }
+
+  &__comment-container {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__comment-header {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__user-image {
+    display: block;
+    width: 73px;
+    height: 73px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__user-name {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  &__user-role {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  &__comment-body {
+    position: relative;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 17px 0 31px;
+
+    &::before {
+      position: absolute;
+      left: -48px;
+      top: 0;
+      content: "";
+      display: block;
+      width: 33px;
+      height: 27px;
+      background: url("../images/quotes.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &__comment-footer {
+    font-size: 15px;
+    line-height: 18px;
+    color: #6248ff;
+  }
+
+  @media (max-width: 1310px) {
+    &__wrapper {
+      gap: 215px;
+    }
+
+    &__subtitle {
+      margin: 0 0 56px;
+    }
+
+    &__buttons-container {
+      justify-content: space-between;
+    }
+
+    &__comment-content {
+      top: 188px;
+      left: calc(50% - (585px / 2));
+    }
+
+    &__comment-container {
+      &--active {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+      }
+    }
+
+    &__comment-header {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 60px;
+    }
+
+    &__comment-body {
+      &::before {
+        left: calc(50% - (33px / 2));
+        top: calc(-16px - 27px);
+      }
+    }
+  }
+}
