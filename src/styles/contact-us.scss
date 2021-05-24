@@ -1,0 +1,192 @@
+.contact-us {
+  background-color: $hover-select-background-color;
+  transition: all $transition-duration;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    @extend %wrapper-size;
+    padding: 120px;
+
+    transition: all $transition-duration;
+  }
+
+  &__title {
+    @include font-styles($primary-font-family, 500, 56px, 66px);
+    transition: all $transition-duration;
+  }
+
+  &__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 32px 0 24px;
+  }
+
+  &__info-text {
+    @include font-styles($secondary-font-family, 400, 16px, 27px);
+    width: 100%;
+    max-width: 483px;
+    color: $grey;
+
+    &--main {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    &--address {
+      max-width: 450px;
+    }
+
+    &--link {
+      text-decoration: none;
+      transition: color $transition-duration;
+
+      &:hover {
+        color: $hover-button-color;
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__contacts-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 585px;
+    height: 471px;
+    background-color: $white;
+    border: 2px solid $default-button-color;
+    border-radius: 20px;
+    margin-top: 14px;
+    padding: 80px;
+    transition: all $transition-duration;
+  }
+
+  &__input-container {
+    position: relative;
+    width: 100%;
+
+    &--warning {
+      &::after {
+        @include font-styles($primary-font-family, 500, 15px, 16px);
+        color: $red;
+        content: "The field must not be empty!";
+        position: absolute;
+        bottom: -22px;
+        display: block;
+      }
+    }
+
+    &--error {
+      &::after {
+        @include font-styles($primary-font-family, 500, 15px, 16px);
+        color: $red;
+        content: "Incorrect email type";
+        position: absolute;
+        bottom: -22px;
+        display: block;
+      }
+    }
+  }
+
+  &__name {
+    @extend %input-styles;
+  }
+
+  &__email {
+    @extend %input-styles;
+  }
+
+  &__message {
+    @extend %input-styles;
+    height: 89px;
+    overflow-x: hidden;
+    resize: none;
+  }
+
+  &__valid {
+    border: 1px solid $green;
+    border-radius: 3px;
+  }
+
+  &__invalid {
+    border: 1px solid $red;
+    border-radius: 3px;
+  }
+
+  &__button {
+    width: 172px;
+    height: 54px;
+    font-size: 16px;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-top: 16px;
+    gap: 0;
+
+    color: $white;
+  }
+
+  @media (max-width: 1310px) {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+    }
+
+    &__form {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    &__wrapper {
+      padding: 48px 130px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__info-container {
+      gap: 32px;
+    }
+
+    &__form {
+      height: 100%;
+      padding: 80px 42px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    &__wrapper {
+      padding: 48px 20px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__title {
+      font-size: 40px;
+      line-height: 44px;
+    }
+
+    &__form {
+      padding: 48px 16px;
+    }
+  }
+}

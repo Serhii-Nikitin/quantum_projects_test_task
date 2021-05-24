@@ -1,0 +1,260 @@
+.get-started {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @extend %wrapper-size;
+    padding: 140px 220px 0 120px;
+
+    transition: all $transition-duration;
+  }
+
+  &__subtitle {
+    @extend %subtitle-styles;
+    margin: 20px 0 68px;
+    transition: all $transition-duration;
+
+    &::after {
+      @extend %subtitle-after-styles;
+      width: 296px;
+      height: 72px;
+      bottom: -5px;
+      left: 0;
+    }
+  }
+
+  &__map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    width: 483px;
+
+    border: 2px solid $default-button-color;
+    box-sizing: border-box;
+    border-radius: 30px;
+
+    transition: all $transition-duration;
+
+    &--first,
+    &--third {
+      align-self: flex-start;
+      &::after {
+        @extend %arrow-styles;
+        left: 100%;
+        border-right: 3px dashed $default-button-color;
+        border-top-right-radius: 30px;
+      }
+    }
+
+    &--second {
+      align-self: flex-end;
+      top: -30px;
+      &::after {
+        @extend %arrow-styles;
+        border-left: 3px dashed $default-button-color;
+        right: 100%;
+        border-top-left-radius: 30px;
+      }
+    }
+
+    &--third {
+      top: -75px;
+    }
+
+    &--four {
+      align-self: flex-end;
+      top: -120px;
+    }
+  }
+
+  &__item-number {
+    font-size: 15px;
+    line-height: 18px;
+
+    color: $blue;
+  }
+
+  &__item-title {
+    @include font-styles($primary-font-family, 500, 24px, 29px);
+    margin: 8px 0 24px;
+  }
+
+  &__item-info {
+    @include font-styles($primary-font-family, 500, 18px, 30px);
+    color: $grey;
+  }
+
+  @media (max-width: 1310px) {
+    &__wrapper {
+      padding: 100px 120px 0;
+    }
+
+    &__map {
+      height: 870px;
+    }
+
+    &__item {
+      width: 329px;
+
+      &--first,
+      &--second,
+      &--third {
+        &::after {
+          width: 500px;
+        }
+      }
+
+      &--second {
+        top: -45px;
+      }
+
+      &--third {
+        top: -105px;
+      }
+
+      &--four {
+        top: -165px;
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    &__wrapper {
+      padding: 100px 40px 0;
+    }
+
+    &__item {
+      &--first,
+      &--second,
+      &--third {
+        &::after {
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    &__subtitle {
+      margin: 0 0 56px;
+    }
+
+    &__wrapper {
+      padding-top: 120px;
+    }
+
+    &__item {
+      &--first,
+      &--second,
+      &--third {
+        &::after {
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__wrapper {
+      padding: 80px 40px 0;
+    }
+
+    &__subtitle {
+      width: 418px;
+
+      &::after {
+        width: 350px;
+      }
+    }
+
+    &__item {
+      &--second {
+        top: -55px;
+      }
+
+      &--third {
+        top: -125px;
+      }
+
+      &--four {
+        top: -200px;
+      }
+
+      &--first,
+      &--second,
+      &--third {
+        &::after {
+          width: 193px;
+          height: 58.5px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    &__wrapper {
+      padding: 80px 20px 0;
+    }
+
+    &__map {
+      gap: 24px;
+      height: fit-content;
+    }
+
+    &__item {
+      &--second,
+      &--third,
+      &--four {
+        top: 0;
+      }
+
+      &--first,
+      &--second,
+      &--third,
+      &--four {
+        align-self: center;
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 510px) {
+    &__subtitle {
+      width: 250px;
+      font-size: 40px;
+      line-height: 44px;
+
+      &::after {
+        width: 214px;
+        height: 50px;
+      }
+    }
+  }
+
+  @media (max-width: 420px) {
+    &__map {
+      gap: 24px;
+    }
+
+    &__item {
+      width: 280px;
+      border-color: $blue;
+      padding: 24px;
+    }
+
+    &__item-number {
+      color: $blue;
+    }
+  }
+}

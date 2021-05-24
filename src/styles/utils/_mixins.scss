@@ -1,6 +1,11 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
-  }
+@mixin font-styles($font, $weight, $size, $height) {
+  font-family: $font;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin button-size($size) {
+  width: $size;
+  height: $size;
 }

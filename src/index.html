@@ -3,11 +3,491 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <title>Test-task</title>
+    <link
+      rel="shortcut icon"
+      href="https://quantum-projects.com/assets/img/QP_%20black.svg"
+      type="image/x-icon"
+    >
+    <link rel="stylesheet" href="./styles/index.scss">
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__container">
+          <div class="header__logo logo">logo</div>
+
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#get-started" class="nav__link">How it works</a>
+              </li>
+              <li class="nav__item">
+                <a href="#comments" class="nav__link">About</a>
+              </li>
+              <li class="nav__item">
+                <a href="#questions" class="nav__link">Instructions</a>
+              </li>
+              <li class="nav__item">
+                <a href="#questions" class="nav__link">Accounts</a>
+              </li>
+              <li class="nav__item">
+                <a href="#questions" class="nav__link">Platforms</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contact-us" class="nav__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header__button-container">
+          <select class="header__language-select">
+            <option value="en" class="header__language-option">en</option>
+            <option value="en" class="header__language-option">ru</option>
+          </select>
+          <button
+            class="header__sign-in-button button"
+            type="button"
+          >
+            <a href="#" class="button__sign-in-link">Sign in for free</a>
+          </button>
+          <button
+            type="button"
+            class="header__hamburger header__hamburger--open"
+          >
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="main__section introduction introduction--violet">
+        <div class="introduction__wrapper">
+          <div class="introduction__info-container">
+            <h1 class="introduction__title">Trade everywhere. Invest here!</h1>
+            <p class="introduction__info">
+              We provide only the best trading software.
+              The trading terminal MetaTrader4 is the most popular and convenient
+              platform for access to global exchanges. You can work anywhere.
+            </p>
+            <button class="introduction__button button">start trading</button>
+          </div>
+          <img
+            src="./images/diagram.svg"
+            alt="diagram"
+            class="introduction__image"
+          >
+        </div>
+      </section>
+
+      <section
+        class="main__section get-started"
+        id="get-started"
+      >
+        <div class="get-started__wrapper">
+          <h2 class="get-started__subtitle">
+            Getting Started Is Fast & Easy
+          </h2>
+          <div class="get-started__map">
+            <div class="get-started__item get-started__item--first">
+              <p class="get-started__item-number">01.</p>
+              <h3 class="get-started__item-title">Register</h3>
+              <p class="get-started__item-info">
+                Complete the simple registration to get your trading credentials.
+              </p>
+            </div>
+            <div class="get-started__item get-started__item--second">
+              <p class="get-started__item-number">02.</p>
+              <h3 class="get-started__item-title">Verification</h3>
+              <p class="get-started__item-info">
+                Big Invest is required to verify your identity,
+                upload your documents quickly and get approved in minutes.
+              </p>
+            </div>
+            <div class="get-started__item get-started__item--third">
+              <p class="get-started__item-number">03.</p>
+              <h3 class="get-started__item-title">Deposit funds</h3>
+              <p class="get-started__item-info">
+                Big Invest accepts credit cards and bank wires.
+                Just use the secure deposit form and follow the steps.
+              </p>
+            </div>
+            <div class="get-started__item get-started__item--four">
+              <p class="get-started__item-number">04.</p>
+              <h3 class="get-started__item-title">Start Trading</h3>
+              <p class="get-started__item-info">
+                Once your deposit has been credited, you can begin trading instantly.
+                In no time you will see profits rolling into your account.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section
+        class="main__section comments"
+        id="comments"
+      >
+        <div class="comments__wrapper">
+          <h2 class="comments__subtitle">
+            People love Big Invest
+          </h2>
+          <div class="comments__buttons-container">
+            <button
+              type="button"
+              class="comments__button comments__button--left"
+              disabled
+            >
+            </button>
+            <button
+              type="button"
+              class="comments__button comments__button--right"
+            >
+            </button>
+          </div>
+          <div class="comments__comment-content">
+            <div class="comments__comment-container comments__comment-container--active">
+              <div class="comments__comment-header">
+                <img
+                  src="./images/user_1.jpg"
+                  alt="user-image"
+                  class="comments__user-image"
+                >
+                <div class="comments__user-info">
+                  <h3 class="comments__user-name">Albert Abello</h3>
+                  <p class="comments__user-role">Director of Growth</p>
+                </div>
+              </div>
+              <p class="comments__comment-body">
+                This magical product actually works!
+                It has radically changed the way we build our audiences.
+                Increasing new customer sales by 6x in our most mature market.
+              </p>
+              <p class="comments__comment-footer">01 / 04</p>
+            </div>
+            <div class="comments__comment-container">
+              <div class="comments__comment-header">
+                <img
+                  src="./images/user_2.jpg"
+                  alt="user-image"
+                  class="comments__user-image"
+                >
+                <div class="comments__user-info">
+                  <h3 class="comments__user-name">Jason Statham</h3>
+                  <p class="comments__user-role">Actor</p>
+                </div>
+              </div>
+              <p class="comments__comment-body">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Aliquid fuga molestiae veritatis perferendis totam
+                consequuntur deserunt accusantium numquam. Labore, architecto?
+              </p>
+              <p class="comments__comment-footer">02 / 04</p>
+            </div>
+            <div class="comments__comment-container">
+              <div class="comments__comment-header">
+                <img
+                  src="./images/user_3.jpg"
+                  alt="user-image"
+                  class="comments__user-image"
+                >
+                <div class="comments__user-info">
+                  <h3 class="comments__user-name">Jackie Chan</h3>
+                  <p class="comments__user-role">Actor</p>
+                </div>
+              </div>
+              <p class="comments__comment-body">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Corrupti quos suscipit laboriosam quidem, quaerat alias
+                nostrum excepturi deleniti praesentium voluptate.
+              </p>
+              <p class="comments__comment-footer">03 / 04</p>
+            </div>
+            <div class="comments__comment-container">
+              <div class="comments__comment-header">
+                <img
+                  src="./images/user_4.jpg"
+                  alt="user-image"
+                  class="comments__user-image"
+                >
+                <div class="comments__user-info">
+                  <h3 class="comments__user-name">Iron Man</h3>
+                  <p class="comments__user-role">Superhero</p>
+                </div>
+              </div>
+              <p class="comments__comment-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Mollitia quos animi eveniet, exercitationem est, eaque
+                praesentium tenetur quisquam molestias ipsam maiore.
+              </p>
+              <p class="comments__comment-footer">04 / 04</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="main__section questions"
+        id="questions"
+      >
+        <div class="questions__wrapper">
+          <h2 class="questions__subtitle">Frequently asked questions</h2>
+          <div class="questions__container">
+            <div class="questions__content">
+              <div class="questions__question">
+                <h3 class="questions__question-title">How do I change my details?</h3>
+                <div class="questions__question-toggler"></div>
+              </div>
+              <div class="questions__answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae dignissimos dolorum distinctio vitae nihil
+                ducimus nostrum, harum accusantium quidem necessitatibus!
+                Incidunt necessitatibus dolorem ullam iure recusandae!
+                Vero error voluptatem vel!
+              </div>
+            </div>
+            <div class="questions__content">
+              <div class="questions__question">
+                <h3 class="questions__question-title">What platforms will I be able to use?</h3>
+                <div class="questions__question-toggler questions__question-toggler--close"></div>
+              </div>
+              <div class="questions__answer questions__answer--active">
+                We provide only the best trading software.
+                The trading terminal MetaTrader4 is the most popular and convenient
+                platform for access to global exchanges. You can work anywhere.
+                All you need is the Internet because the necessary trading tools
+                are already collected in one place and are available in a couple of clicks.
+                Use only the best and develop with us!
+              </div>
+            </div>
+            <div class="questions__content">
+              <div class="questions__question">
+                <h3 class="questions__question-title">How do I change my details?</h3>
+                <div class="questions__question-toggler"></div>
+              </div>
+              <div class="questions__answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae dignissimos dolorum distinctio vitae nihil
+                ducimus nostrum, harum accusantium quidem necessitatibus!
+                Incidunt necessitatibus dolorem ullam iure recusandae!
+                Vero error voluptatem vel!
+              </div>
+            </div>
+            <div class="questions__content">
+              <div class="questions__question">
+                <h3 class="questions__question-title">How do I change my details?</h3>
+                <div class="questions__question-toggler"></div>
+              </div>
+              <div class="questions__answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae dignissimos dolorum distinctio vitae nihil
+                ducimus nostrum, harum accusantium quidem necessitatibus!
+                Incidunt necessitatibus dolorem ullam iure recusandae!
+                Vero error voluptatem vel!
+              </div>
+            </div>
+            <div class="questions__content">
+              <div class="questions__question">
+                <h3 class="questions__question-title">How do I change my details?</h3>
+                <div class="questions__question-toggler"></div>
+              </div>
+              <div class="questions__answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae dignissimos dolorum distinctio vitae nihil
+                ducimus nostrum, harum accusantium quidem necessitatibus!
+                Incidunt necessitatibus dolorem ullam iure recusandae!
+                Vero error voluptatem vel!
+              </div>
+            </div>
+            <div class="questions__content">
+              <div class="questions__question">
+                <h3 class="questions__question-title">How do I change my details?</h3>
+                <div class="questions__question-toggler"></div>
+              </div>
+              <div class="questions__answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae dignissimos dolorum distinctio vitae nihil
+                ducimus nostrum, harum accusantium quidem necessitatibus!
+                Incidunt necessitatibus dolorem ullam iure recusandae!
+                Vero error voluptatem vel!
+              </div>
+            </div>
+            <div class="questions__content">
+              <div class="questions__question">
+                <h3 class="questions__question-title">How do I change my details?</h3>
+                <div class="questions__question-toggler"></div>
+              </div>
+              <div class="questions__answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae dignissimos dolorum distinctio vitae nihil
+                ducimus nostrum, harum accusantium quidem necessitatibus!
+                Incidunt necessitatibus dolorem ullam iure recusandae!
+                Vero error voluptatem vel!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="main__section contact-us"
+        id="contact-us"
+      >
+        <div class="contact-us__wrapper">
+          <div class="contact-us__info">
+            <h2 class="contact-us__title">Contact us!</h2>
+            <div class="contact-us__info-container">
+              <p class="contact-us__info-text contact-us__info-text--main">
+                The support staff and customer service are available to help
+                you with any questions or needs you might have. Just drop us a line.
+              </p>
+              <p class="contact-us__info-text">
+                This site is owned and operated by Kode Tech Solutions LTD
+              </p>
+            </div>
+            <div class="contact-us__contacts">
+              <div class="contact-us__contacts-wrapper">
+                <h3 class="contact-us__contacts-name">Phone:</h3>
+                <a
+                  href="tel:442038857261"
+                  class="contact-us__info-text contact-us__info-text--link"
+                >
+                  442038857261
+                </a>
+              </div>
+              <div class="contact-us__contacts-wrapper">
+                <h3 class="contact-us__contacts-name">Email:</h3>
+                <a
+                  href="mailto:help@google.com"
+                  class="contact-us__info-text contact-us__info-text--link"
+                >
+                  help@google.com
+                </a>
+              </div>
+              <div class="contact-us__contacts-wrapper">
+                <h3 class="contact-us__contacts-name">Address:</h3>
+                <p class="contact-us__info-text contact-us__info-text--address">
+                  Trust Company Complex, Ajeltake Road, Ajeltake Island,
+                  Majuro, Republic of the Marshall Islands, MH 96960
+                </p>
+              </div>
+            </div>
+          </div>
+          <form
+            action="#"
+            method="POST"
+            class="contact-us__form"
+          >
+            <div class="contact-us__input-container">
+              <input
+                type="text"
+                name="name"
+                class="contact-us__name"
+                placeholder="Name"
+                id="name"
+              >
+            </div>
+            <div class="contact-us__input-container">
+              <input
+                type="email"
+                name="email"
+                class="contact-us__email"
+                placeholder="Email"
+                id="email"
+              >
+            </div>
+            <div class="contact-us__input-container">
+              <textarea
+                name="message"
+                id="message"
+                class="contact-us__message"
+                placeholder="Message"
+             ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="contact-us__button button"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__top">
+          <div class="footer__logo logo">logo</div>
+          <div class="footer__info">
+            <div class="footer__info-wrapper">
+              <h3 class="footer__info-title">
+                Information and high risk warning:
+              </h3>
+              <p class="footer__info-content">
+                Trading with foreign exchange (FX), contract for
+                differences (CFDs) and precious metals carries a
+                high level of risk that may not be suitable
+                for all investors. Leverage creates additional
+                risk and loss exposure. Before you decide to trade foreign
+                exchange or contract for differences, carefully consider your
+                investment objectives, experience level, and risk tolerance.
+              </p>
+            </div>
+            <div class="footer__info-wrapper">
+              <h3 class="footer__info-title">Legal disclaimer:</h3>
+              <p class="footer__info-content">
+                Forex trading entails significant risks and is not appropriate
+                for all investors. The possibility of incurring substantial
+                losses should be taken into account. It is therefore important
+                to understand the possible consequences of investing. Traders
+                should weigh their earning potential against the risks involved
+                and act accordingly. Interactive Trade Ltd operating under
+                brand and using domenLink domain within the European Economic Area.
+              </p>
+            </div>
+          </div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#comments" class="footer__nav-link">About us</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#questions" class="footer__nav-link">Instructions</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#questions" class="footer__nav-link">Platforms</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#contact-us" class="footer__nav-link">Contact Us</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Sign in</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Sign up for free</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright">Copyright 2021, All Right Reserved</div>
+          <div class="footer__links-container">
+            <a href="#" class="footer__link">Terms and Conditions</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Risk Warnings</a>
+            <a href="#" class="footer__link">Anti-Money Laundering</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous">
+    </script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>

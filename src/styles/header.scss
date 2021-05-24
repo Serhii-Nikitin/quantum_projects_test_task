@@ -1,0 +1,150 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  height: $header-height;
+  min-width: $min-width;
+
+  background-color: $white;
+  box-shadow: 0 13px 28px -10px rgba(89, 131, 163, 0.32);
+
+  &__wrapper {
+    @extend %wrapper-size;
+    padding: 0 60px 0 120px;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 57px;
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+    gap: $buttons-gap;
+  }
+
+  &__language-select {
+    @include font-styles($primary-font-family, 500, 15px, 16px);
+    color: $primary-text-color;
+
+    width: $select-width;
+    height: $select-width / 2;
+    padding: 10px 16px;
+    border: 1px solid $black;
+    border-radius: $button-border-radius;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+
+    transition: background-color $transition-duration;
+
+    &:hover {
+      background-color: $hover-select-background-color;
+    }
+  }
+
+  &__sign-in-button {
+    @include font-styles($primary-font-family, 500, 14px, 14px);
+    width: 167px;
+    height: 40px;
+    z-index: 2;
+  }
+
+  &__hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__container {
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 1120px) {
+    &__wrapper {
+      flex-direction: column;
+      padding: 20px 44px 20px 120px;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    &__nav {
+      position: absolute;
+      top: 80px;
+      left: -200%;
+      z-index: 1;
+
+      width: 100%;
+      background-color: $nav-background-color;
+      transition: all $transition-duration;
+
+      &--active {
+        left: 0;
+      }
+    }
+
+    &__button-container {
+      order: -1;
+      align-self: flex-end;
+    }
+
+    &__language-select {
+      display: none;
+    }
+
+    &__hamburger {
+      display: block;
+      border: none;
+      @include button-size(24px);
+      margin-left: calc(51px - #{$buttons-gap});
+
+      &--open {
+        background: url("../images/open_toggler.svg") no-repeat center;
+      }
+
+      &--close {
+        background: url("../images/close_toggler.svg") no-repeat center;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    &__wrapper {
+      padding: 28px 20px;
+    }
+
+    &__logo {
+      display: block;
+      position: absolute;
+      top: 28px;
+      left: 20px;
+    }
+
+    &__sign-in-button {
+      display: none;
+    }
+
+    &__hamburger {
+      margin-left: 0;
+    }
+  }
+}
