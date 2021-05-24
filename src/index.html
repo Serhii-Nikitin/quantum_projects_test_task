@@ -381,13 +381,15 @@
             method="POST"
             class="contact-us__form"
           >
-            <input
-              type="text"
-              name="name"
-              class="contact-us__name"
-              placeholder="Name"
-              id="name"
-            >
+            <div class="contact-us__input-container">
+              <input
+                type="text"
+                name="name"
+                class="contact-us__name"
+                placeholder="Name"
+                id="name"
+              >
+            </div>
             <div class="contact-us__input-container">
               <input
                 type="email"
@@ -397,12 +399,14 @@
                 id="email"
               >
             </div>
-            <textarea
-              name="message"
-              id="message"
-              class="contact-us__message"
-              placeholder="Message"
-           ></textarea>
+            <div class="contact-us__input-container">
+              <textarea
+                name="message"
+                id="message"
+                class="contact-us__message"
+                placeholder="Message"
+             ></textarea>
+            </div>
             <button
               type="submit"
               class="contact-us__button button"

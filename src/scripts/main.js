@@ -70,10 +70,36 @@ $(document).ready(function() {
     if ($(this).val() !== '') {
       $(this).removeClass('contact-us__invalid');
       $(this).addClass('contact-us__valid');
+
+      $(this).parent()
+        .removeClass('contact-us__input-container--warning');
     } else {
       $(this).addClass('contact-us__invalid');
       $(this).removeClass('contact-us__valid');
+
+      $(this).parent()
+        .addClass('contact-us__input-container--warning');
     }
+  };
+
+  const removeError = function() {
+    $(this).parent()
+      .removeClass('contact-us__input-container--error')
+      .removeClass('contact-us__input-container--warning');
+  };
+
+  const addWarning = function(field) {
+    field.addClass('contact-us__invalid');
+    field.removeClass('contact-us__valid');
+
+    field.parent()
+      .addClass('contact-us__input-container--warning');
+  };
+
+  const clear = function(field) {
+    field.val('');
+    field.removeClass('contact-us__invalid');
+    field.removeClass('contact-us__valid');
   };
 
   mail.blur(function() {
@@ -81,60 +107,54 @@ $(document).ready(function() {
       mail.removeClass('contact-us__invalid');
       mail.addClass('contact-us__valid');
 
-      $('.contact-us__input-container')
+      mail.parent()
         .removeClass('contact-us__input-container--error');
     } else {
       mail.addClass('contact-us__invalid');
       mail.removeClass('contact-us__valid');
 
-      $('.contact-us__input-container')
+      mail.parent()
         .addClass('contact-us__input-container--error');
     }
   });
   name.blur(textValidation);
   message.blur(textValidation);
 
-  mail.focus(function() {
-    $('.contact-us__input-container')
-      .removeClass('contact-us__input-container--error');
-  });
+  mail.focus(removeError);
+  name.focus(removeError);
+  message.focus(removeError);
 
   form.submit(function(event) {
     event.preventDefault();
 
-    if (mail.val().search(regexp) !== 0 || mail.val() === '') {
+    if (mail.val() === '') {
+      addWarning(mail);
+    } else if (mail.val().search(regexp) !== 0) {
       mail.addClass('contact-us__invalid');
       mail.removeClass('contact-us__valid');
 
-      $('.contact-us__input-container')
+      mail.parent()
         .addClass('contact-us__input-container--error');
     }
 
     if (name.val() === '') {
-      name.addClass('contact-us__invalid');
-      name.removeClass('contact-us__valid');
+      addWarning(name);
     }
 
     if (message.val() === '') {
-      message.addClass('contact-us__invalid');
-      message.removeClass('contact-us__valid');
+      addWarning(message);
     }
 
     if (name.val() !== ''
       && message.val() !== ''
       && mail.val().search(regexp) === 0
     ) {
-      name.val('');
-      name.removeClass('contact-us__invalid');
-      name.removeClass('contact-us__valid');
-      message.val('');
-      message.removeClass('contact-us__invalid');
-      message.removeClass('contact-us__valid');
-      mail.val('');
-      mail.removeClass('contact-us__invalid');
-      mail.removeClass('contact-us__valid');
+      clear(mail);
+      clear(name);
+      clear(message);
 
       $('.contact-us__input-container')
+        .removeClass('contact-us__input-container--warning')
         .removeClass('contact-us__input-container--error');
     }
   });

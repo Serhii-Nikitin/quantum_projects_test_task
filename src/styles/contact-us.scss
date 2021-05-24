@@ -83,6 +83,17 @@
     position: relative;
     width: 100%;
 
+    &--warning {
+      &::after {
+        @include font-styles($primary-font-family, 500, 15px, 16px);
+        color: $red;
+        content: "The field must not be empty!";
+        position: absolute;
+        bottom: -22px;
+        display: block;
+      }
+    }
+
     &--error {
       &::after {
         @include font-styles($primary-font-family, 500, 15px, 16px);
