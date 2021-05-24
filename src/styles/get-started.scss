@@ -3,27 +3,19 @@
     display: flex;
     flex-direction: column;
 
-    width: 100%;
-    max-width: 1440px;
-    min-width: 320px;
-    padding: 140px 220px 40px 120px;
+    @extend %wrapper-size;
+    padding: 140px 220px 0 120px;
 
     transition: all $transition-duration;
   }
 
   &__subtitle {
-    @include subtitle-styles;
-    position: relative;
-    width: 483px;
-    height: fit-content;
+    @extend %subtitle-styles;
     margin: 20px 0 68px;
+    transition: all $transition-duration;
 
     &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      background-color: #6248ff;
-      opacity: 0.1;
+      @extend %subtitle-after-styles;
       width: 296px;
       height: 72px;
       bottom: -5px;
@@ -35,7 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 870px;
+    height: 800px;
   }
 
   &__item {
@@ -46,7 +38,7 @@
     padding: 32px;
     width: 483px;
 
-    border: 2px solid #6248ff;
+    border: 2px solid $default-button-color;
     box-sizing: border-box;
     border-radius: 30px;
 
@@ -56,17 +48,10 @@
     &--third {
       align-self: flex-start;
       &::after {
-        position: absolute;
+        @extend %arrow-styles;
         left: 100%;
-        top: 50%;
-        display: inline-block;
-        content: "";
-        width: 374px;
-        height: 70px;
-        border-top: 3px dashed #6248ff;
-        border-right: 3px dashed #6248ff;
+        border-right: 3px dashed $default-button-color;
         border-top-right-radius: 30px;
-        transition: all $transition-duration;
       }
     }
 
@@ -74,17 +59,10 @@
       align-self: flex-end;
       top: -30px;
       &::after {
-        position: absolute;
+        @extend %arrow-styles;
+        border-left: 3px dashed $default-button-color;
         right: 100%;
-        top: 50%;
-        display: inline-block;
-        content: "";
-        width: 374px;
-        height: 70px;
-        border-top: 3px dashed #6248ff;
-        border-left: 3px dashed #6248ff;
         border-top-left-radius: 30px;
-        transition: all $transition-duration;
       }
     }
 
@@ -94,7 +72,7 @@
 
     &--four {
       align-self: flex-end;
-      top: -105px;
+      top: -120px;
     }
   }
 
@@ -102,26 +80,26 @@
     font-size: 15px;
     line-height: 18px;
 
-    color: #4f62f6;
+    color: $blue;
   }
 
   &__item-title {
-    font-size: 24px;
-    line-height: 29px;
+    @include font-styles($primary-font-family, 500, 24px, 29px);
     margin: 8px 0 24px;
   }
 
   &__item-info {
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-    line-height: 30px;
-
-    color: #4f4f4f;
+    @include font-styles($primary-font-family, 500, 18px, 30px);
+    color: $grey;
   }
 
   @media (max-width: 1310px) {
     &__wrapper {
-      padding: 100px 120px;
+      padding: 100px 120px 0;
+    }
+
+    &__map {
+      height: 870px;
     }
 
     &__item {
@@ -135,19 +113,23 @@
         }
       }
 
+      &--second {
+        top: -45px;
+      }
+
       &--third {
-        top: -90px;
+        top: -105px;
       }
 
       &--four {
-        top: -150px;
+        top: -165px;
       }
     }
   }
 
   @media (max-width: 1100px) {
     &__wrapper {
-      padding: 100px 40px 120px;
+      padding: 100px 40px 0;
     }
 
     &__item {
@@ -167,7 +149,7 @@
     }
 
     &__wrapper {
-      padding: 120px 40px 80px;
+      padding-top: 120px;
     }
 
     &__item {
@@ -183,7 +165,7 @@
 
   @media (max-width: 800px) {
     &__wrapper {
-      padding: 80px 40px 70px;
+      padding: 80px 40px 0;
     }
 
     &__subtitle {
@@ -196,15 +178,15 @@
 
     &__item {
       &--second {
-        top: -40px;
+        top: -55px;
       }
 
       &--third {
-        top: -115px;
+        top: -125px;
       }
 
       &--four {
-        top: -190px;
+        top: -200px;
       }
 
       &--first,
@@ -220,7 +202,7 @@
 
   @media (max-width: 750px) {
     &__wrapper {
-      padding: 80px 20px;
+      padding: 80px 20px 0;
     }
 
     &__map {
@@ -247,17 +229,7 @@
     }
   }
 
-  @media (max-width: 420px) {
-    &__map {
-      gap: 24px;
-    }
-
-    &__item {
-      width: 280px;
-      border-color: #4f62f6;
-      padding: 24px;
-    }
-
+  @media (max-width: 510px) {
     &__subtitle {
       width: 250px;
       font-size: 40px;
@@ -268,9 +240,21 @@
         height: 50px;
       }
     }
+  }
+
+  @media (max-width: 420px) {
+    &__map {
+      gap: 24px;
+    }
+
+    &__item {
+      width: 280px;
+      border-color: $blue;
+      padding: 24px;
+    }
 
     &__item-number {
-      color: #4f62f6;
+      color: $blue;
     }
   }
 }

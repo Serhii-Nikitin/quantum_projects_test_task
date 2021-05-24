@@ -1,0 +1,7 @@
+.main {
+  &__section {
+    display: flex;
+    justify-content: center;
+    min-width: $min-width;
+  }
+}

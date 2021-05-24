@@ -5,29 +5,20 @@
     align-items: center;
     gap: 60px;
 
-    width: 100%;
-    max-width: 1440px;
-    min-width: 320px;
-    padding: 0 120px 140px;
+    @extend %wrapper-size;
+    padding: 195px 120px 140px;
 
     transition: all $transition-duration;
   }
 
   &__subtitle {
-    @include subtitle-styles;
-    position: relative;
-    width: 483px;
-    height: fit-content;
+    @extend %subtitle-styles;
 
     align-self: flex-start;
     transition: all $transition-duration;
 
     &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      background-color: #6248ff;
-      opacity: 0.1;
+      @extend %subtitle-after-styles;
       width: 263px;
       height: 72px;
       bottom: -5px;
@@ -49,12 +40,12 @@
     width: 995px;
     padding: 32px 40px;
 
-    border: 2px solid #6248ff;
+    border: 2px solid $default-button-color;
     border-radius: 20px;
     transition: all $transition-duration;
 
     &:hover {
-      background-color: #f2f0ff;
+      background-color: $hover-select-background-color;
     }
   }
 
@@ -65,13 +56,11 @@
   }
 
   &__question-title {
-    font-size: 24px;
-    line-height: 29px;
+    @include font-styles($primary-font-family, 500, 24px, 29px);
   }
 
   &__question-toggler {
-    width: 32px;
-    height: 32px;
+    @include button-size(32px);
     background: url("../images/question_open.svg") no-repeat center;
     background-size: contain;
     cursor: pointer;
@@ -83,24 +72,16 @@
   }
 
   &__answer {
+    @include font-styles($secondary-font-family, 400, 16px, 27px);
     display: none;
     width: 100%;
     max-width: 750px;
     padding-right: 50px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    line-height: 27px;
-    color: #4f4f4f;
+    color: $grey;
     transition: all $transition-duration;
 
     &--active {
       display: block;
-    }
-  }
-
-  @media (max-width: 1310px) {
-    &__wrapper {
-      padding: 83px 120px 140px;
     }
   }
 
@@ -121,7 +102,7 @@
 
   @media (max-width: 750px) {
     &__wrapper {
-      padding: 0 20px 80px;
+      padding: 80px 20px;
     }
   }
 
@@ -131,7 +112,7 @@
     }
 
     &__subtitle {
-      width: 280px;
+      width: $min-content-width;
       font-size: 40px;
       line-height: 44px;
 

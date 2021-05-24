@@ -1,9 +1,33 @@
-$white: #fff;
+$primary-font-family: "MuseoSansCyrl", sans-serif;
+$secondary-font-family: "Montserrat", sans-serif;
+
 $header-height: 80px;
-$primary-text-color: #333;
 $select-width: 80px;
-$transition-duration: 300ms;
 $buttons-gap: 24px;
+$button-border-radius: 60px;
+$min-width: 320px;
+$max-width: 1440px;
+
+$comment-content-width: 585px;
+$comment-content-width-tablet: 508px;
+$min-content-width: 280px;
+$quotes-width: 33px;
+$quotes-height: 27px;
+
+$transition-duration: 300ms;
+
+$white: #fff;
+$blue: #4f62f6;
+$primary-text-color: #333;
 $default-button-color: #6248ff;
 $hover-button-color: #7181fc;
 $active-button-color: #354bf4;
+$disabled-button-color: #e0e0e0;
+$hover-select-background-color: #f2f0ff;
+$grey: #4f4f4f;
+$placeholder-color: #828282;
+$violet: #efedff;
+$black: #000;
+$red: #eb5757;
+$green: #0eac00;
+$nav-background-color: #989898;

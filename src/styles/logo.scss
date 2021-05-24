@@ -1,0 +1,14 @@
+.logo {
+  @include font-styles($primary-font-family, 700, 15px, 16px);
+  text-transform: uppercase;
+  cursor: pointer;
+
+  width: fit-content;
+  height: fit-content;
+
+  transition: transform $transition-duration;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}

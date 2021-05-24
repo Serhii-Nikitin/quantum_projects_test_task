@@ -4,28 +4,19 @@
     display: flex;
     flex-direction: column;
 
-    width: 100%;
-    max-width: 1440px;
-    min-width: 320px;
-    padding: 0 120px 195px;
+    @extend %wrapper-size;
+    padding: 140px 120px 0;
 
     transition: all $transition-duration;
   }
 
   &__subtitle {
-    @include subtitle-styles;
-    position: relative;
-    width: 483px;
-    height: fit-content;
+    @extend %subtitle-styles;
     margin: 0 0 39px;
     transition: all $transition-duration;
 
     &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      background-color: #6248ff;
-      opacity: 0.1;
+      @extend %subtitle-after-styles;
       width: 168px;
       height: 72px;
       bottom: -5px;
@@ -39,11 +30,10 @@
   }
 
   &__button {
-    width: 48px;
-    height: 48px;
+    @include button-size(48px);
     border-radius: 50%;
     background-color: transparent;
-    border: 1px solid #6248ff;
+    border: 1px solid $default-button-color;
     cursor: pointer;
     transition: all $transition-duration;
 
@@ -52,7 +42,7 @@
     }
 
     &:disabled {
-      border: 1px solid #e0e0e0;
+      border: 1px solid $disabled-button-color;
     }
 
     &--left {
@@ -67,8 +57,8 @@
   &__comment-content {
     position: absolute;
     right: 120px;
-    top: 27px;
-    width: 585px;
+    top: 167px;
+    width: $comment-content-width;
     transition: all $transition-duration;
   }
 
@@ -88,8 +78,7 @@
 
   &__user-image {
     display: block;
-    width: 73px;
-    height: 73px;
+    @include button-size(73px);
     border-radius: 50%;
     object-fit: cover;
   }
@@ -100,20 +89,16 @@
   }
 
   &__user-name {
-    font-size: 18px;
-    line-height: 30px;
+    @include font-styles($primary-font-family, 500, 18px, 30px);
   }
 
   &__user-role {
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    line-height: 27px;
+    @include font-styles($secondary-font-family, 500, 16px, 27px);
   }
 
   &__comment-body {
     position: relative;
-    font-size: 24px;
-    line-height: 29px;
+    @include font-styles($primary-font-family, 500, 24px, 29px);
     margin-bottom: 31px;
 
     &::before {
@@ -122,8 +107,8 @@
       top: 0;
       content: "";
       display: block;
-      width: 33px;
-      height: 27px;
+      width: $quotes-width;
+      height: $quotes-height;
       background: url("../images/quotes.svg") no-repeat center;
       background-size: contain;
       margin-bottom: 17px;
@@ -131,13 +116,13 @@
   }
 
   &__comment-footer {
-    font-size: 15px;
-    line-height: 18px;
-    color: #6248ff;
+    @include font-styles($primary-font-family, 500, 15px, 18px);
+    color: $default-button-color;
   }
 
   @media (max-width: 1310px) {
     &__wrapper {
+      padding-bottom: 83px;
       gap: 180px;
     }
 
@@ -150,8 +135,8 @@
     }
 
     &__comment-content {
-      top: 188px;
-      left: calc(50% - (585px / 2));
+      top: 328px;
+      left: calc(50% - (#{$comment-content-width} / 2));
     }
 
     &__comment-container {
@@ -171,15 +156,25 @@
 
     &__comment-body {
       &::before {
-        left: calc(50% - (33px / 2));
-        top: calc(-16px - 27px);
+        left: calc(50% - (#{$quotes-width} / 2));
+        top: calc(-16px - #{$quotes-height});
       }
     }
   }
 
   @media (max-width: 1100px) {
     &__wrapper {
-      padding: 0 40px 120px;
+      padding: 120px 40px;
+      gap: 215px;
+    }
+
+    &__comment-content {
+      top: 308px;
+      left: calc(50% - (#{$comment-content-width} / 2));
+    }
+
+    &__subtitle {
+      margin: 0;
     }
   }
 
@@ -189,21 +184,26 @@
     }
 
     &__comment-content {
-      width: 508px;
-      left: calc(50% - (508px / 2));
+      width: $comment-content-width-tablet;
+      left: calc(50% - (#{$comment-content-width-tablet} / 2));
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__wrapper {
+      padding: 80px 20px 120px;
+      gap: 215px;
+    }
+
+    &__comment-content {
+      top: 252px;
     }
   }
 
   @media (max-width: 750px) {
     &__wrapper {
-      padding: 0 20px 80px;
-      gap: 330px;
-    }
-
-    &__comment-content {
-      width: 508px;
-      top: 188px;
-      left: calc(50% - (508px / 2));
+      padding-bottom: 0;
+      gap: 370px;
     }
   }
 
@@ -216,7 +216,6 @@
       width: 280px;
       font-size: 40px;
       line-height: 44px;
-      margin: 0;
 
       &::after {
         width: 254px;
@@ -225,9 +224,9 @@
     }
 
     &__comment-content {
-      width: 280px;
-      top: 128px;
-      left: calc(50% - (280px / 2));
+      width: $min-content-width;
+      left: calc(50% - (#{$min-content-width} / 2));
+      top: 208px;
     }
 
     &__comment-body {
@@ -238,7 +237,7 @@
     }
 
     &__comments-footer {
-      color: #4f62f6;
+      color: $blue;
     }
   }
 }

@@ -4,10 +4,16 @@
   justify-content: center;
   background-color: $default-button-color;
   border: none;
-  border-radius: 60px;
+  border-radius: $button-border-radius;
 
   cursor: pointer;
   transition: background-color $transition-duration;
+
+  &__sign-in-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $white;
+  }
 
   &:hover {
     background-color: $hover-button-color;

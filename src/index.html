@@ -4,33 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test-task</title>
+    <link
+      rel="shortcut icon"
+      href="https://quantum-projects.com/assets/img/QP_%20black.svg"
+      type="image/x-icon"
+    >
     <link rel="stylesheet" href="./styles/index.scss">
   </head>
   <body>
     <header class="header">
-      <div class="wrapper">
+      <div class="header__wrapper">
         <div class="header__container">
-          <div class="header__logo">logo</div>
+          <div class="header__logo logo">logo</div>
 
           <nav class="header__nav nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="/" class="nav__link">How it works</a>
+                <a href="#get-started" class="nav__link">How it works</a>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">About</a>
+                <a href="#comments" class="nav__link">About</a>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">Instructions</a>
+                <a href="#questions" class="nav__link">Instructions</a>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">Accounts</a>
+                <a href="#questions" class="nav__link">Accounts</a>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">Platforms</a>
+                <a href="#questions" class="nav__link">Platforms</a>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">Contact</a>
+                <a href="#contact-us" class="nav__link">Contact</a>
               </li>
             </ul>
           </nav>
@@ -45,7 +50,7 @@
             class="header__sign-in-button button"
             type="button"
           >
-            <a href="/" class="header__sign-in-link">Sign in for free</a>
+            <a href="#" class="button__sign-in-link">Sign in for free</a>
           </button>
           <button
             type="button"
@@ -58,26 +63,29 @@
     </header>
 
     <main class="main">
-      <section class="main__section section section--violet">
-        <div class="section__wrapper">
-          <div class="section__info-container">
-            <h1 class="section__title">Trade everywhere. Invest here!</h1>
-            <p class="section__info">
+      <section class="main__section introduction introduction--violet">
+        <div class="introduction__wrapper">
+          <div class="introduction__info-container">
+            <h1 class="introduction__title">Trade everywhere. Invest here!</h1>
+            <p class="introduction__info">
               We provide only the best trading software.
               The trading terminal MetaTrader4 is the most popular and convenient
               platform for access to global exchanges. You can work anywhere.
             </p>
-            <button class="section__button button">start trading</button>
+            <button class="introduction__button button">start trading</button>
           </div>
           <img
             src="./images/diagram.svg"
             alt="diagram"
-            class="section__image"
+            class="introduction__image"
           >
         </div>
       </section>
 
-      <section class="main__section section get-started">
+      <section
+        class="main__section get-started"
+        id="get-started"
+      >
         <div class="get-started__wrapper">
           <h2 class="get-started__subtitle">
             Getting Started Is Fast & Easy
@@ -119,7 +127,10 @@
       </section>
 
 
-      <section class="main__section section comments">
+      <section
+        class="main__section comments"
+        id="comments"
+      >
         <div class="comments__wrapper">
           <h2 class="comments__subtitle">
             People love Big Invest
@@ -218,7 +229,10 @@
         </div>
       </section>
 
-      <section class="main__section section questions">
+      <section
+        class="main__section questions"
+        id="questions"
+      >
         <div class="questions__wrapper">
           <h2 class="questions__subtitle">Frequently asked questions</h2>
           <div class="questions__container">
@@ -318,7 +332,10 @@
         </div>
       </section>
 
-      <section class="main__section section contact-us">
+      <section
+        class="main__section contact-us"
+        id="contact-us"
+      >
         <div class="contact-us__wrapper">
           <div class="contact-us__info">
             <h2 class="contact-us__title">Contact us!</h2>
@@ -334,11 +351,21 @@
             <div class="contact-us__contacts">
               <div class="contact-us__contacts-wrapper">
                 <h3 class="contact-us__contacts-name">Phone:</h3>
-                <p class="contact-us__info-text">442038857261</p>
+                <a
+                  href="tel:442038857261"
+                  class="contact-us__info-text contact-us__info-text--link"
+                >
+                  442038857261
+                </a>
               </div>
               <div class="contact-us__contacts-wrapper">
                 <h3 class="contact-us__contacts-name">Email:</h3>
-                <p class="contact-us__info-text">help@google.com</p>
+                <a
+                  href="mailto:help@google.com"
+                  class="contact-us__info-text contact-us__info-text--link"
+                >
+                  help@google.com
+                </a>
               </div>
               <div class="contact-us__contacts-wrapper">
                 <h3 class="contact-us__contacts-name">Address:</h3>
@@ -349,28 +376,108 @@
               </div>
             </div>
           </div>
-          <form class="contact-us__form">
+          <form
+            action="#"
+            method="POST"
+            class="contact-us__form"
+          >
             <input
               type="text"
+              name="name"
               class="contact-us__name"
               placeholder="Name"
+              id="name"
             >
-            <input
-              type="text"
-              class="contact-us__email"
-              placeholder="Email"
-            >
+            <div class="contact-us__input-container">
+              <input
+                type="email"
+                name="email"
+                class="contact-us__email"
+                placeholder="Email"
+                id="email"
+              >
+            </div>
             <textarea
               name="message"
               id="message"
               class="contact-us__message"
               placeholder="Message"
            ></textarea>
-            <button class="contact-us__button button">Send</button>
+            <button
+              type="submit"
+              class="contact-us__button button"
+            >
+              Send
+            </button>
           </form>
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__top">
+          <div class="footer__logo logo">logo</div>
+          <div class="footer__info">
+            <div class="footer__info-wrapper">
+              <h3 class="footer__info-title">
+                Information and high risk warning:
+              </h3>
+              <p class="footer__info-content">
+                Trading with foreign exchange (FX), contract for
+                differences (CFDs) and precious metals carries a
+                high level of risk that may not be suitable
+                for all investors. Leverage creates additional
+                risk and loss exposure. Before you decide to trade foreign
+                exchange or contract for differences, carefully consider your
+                investment objectives, experience level, and risk tolerance.
+              </p>
+            </div>
+            <div class="footer__info-wrapper">
+              <h3 class="footer__info-title">Legal disclaimer:</h3>
+              <p class="footer__info-content">
+                Forex trading entails significant risks and is not appropriate
+                for all investors. The possibility of incurring substantial
+                losses should be taken into account. It is therefore important
+                to understand the possible consequences of investing. Traders
+                should weigh their earning potential against the risks involved
+                and act accordingly. Interactive Trade Ltd operating under
+                brand and using domenLink domain within the European Economic Area.
+              </p>
+            </div>
+          </div>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#comments" class="footer__nav-link">About us</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#questions" class="footer__nav-link">Instructions</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#questions" class="footer__nav-link">Platforms</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#contact-us" class="footer__nav-link">Contact Us</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Sign in</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Sign up for free</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright">Copyright 2021, All Right Reserved</div>
+          <div class="footer__links-container">
+            <a href="#" class="footer__link">Terms and Conditions</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Risk Warnings</a>
+            <a href="#" class="footer__link">Anti-Money Laundering</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"

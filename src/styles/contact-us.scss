@@ -1,5 +1,5 @@
 .contact-us {
-  background-color: #f2f0ff;
+  background-color: $hover-select-background-color;
   transition: all $transition-duration;
 
   &__wrapper {
@@ -7,17 +7,14 @@
     justify-content: space-between;
     gap: 30px;
 
-    width: 100%;
-    max-width: 1440px;
-    min-width: 320px;
+    @extend %wrapper-size;
     padding: 120px;
 
     transition: all $transition-duration;
   }
 
   &__title {
-    font-size: 56px;
-    line-height: 66px;
+    @include font-styles($primary-font-family, 500, 56px, 66px);
     transition: all $transition-duration;
   }
 
@@ -29,12 +26,10 @@
   }
 
   &__info-text {
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    line-height: 27px;
+    @include font-styles($secondary-font-family, 400, 16px, 27px);
     width: 100%;
     max-width: 483px;
-    color: #4f4f4f;
+    color: $grey;
 
     &--main {
       font-size: 18px;
@@ -43,6 +38,15 @@
 
     &--address {
       max-width: 450px;
+    }
+
+    &--link {
+      text-decoration: none;
+      transition: color $transition-duration;
+
+      &:hover {
+        color: $hover-button-color;
+      }
     }
   }
 
@@ -59,6 +63,7 @@
   }
 
   &__form {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,21 +72,52 @@
     max-width: 585px;
     height: 471px;
     background-color: $white;
-    border: 2px solid #6248ff;
+    border: 2px solid $default-button-color;
     border-radius: 20px;
     margin-top: 14px;
     padding: 80px;
     transition: all $transition-duration;
   }
 
-  &__name,
+  &__input-container {
+    position: relative;
+    width: 100%;
+
+    &--error {
+      &::after {
+        @include font-styles($primary-font-family, 500, 15px, 16px);
+        color: $red;
+        content: "Incorrect email type";
+        position: absolute;
+        bottom: -22px;
+        display: block;
+      }
+    }
+  }
+
+  &__name {
+    @extend %input-styles;
+  }
+
   &__email {
-    @include input-styles;
+    @extend %input-styles;
   }
 
   &__message {
-    @include input-styles;
+    @extend %input-styles;
     height: 89px;
+    overflow-x: hidden;
+    resize: none;
+  }
+
+  &__valid {
+    border: 1px solid $green;
+    border-radius: 3px;
+  }
+
+  &__invalid {
+    border: 1px solid $red;
+    border-radius: 3px;
   }
 
   &__button {
@@ -94,7 +130,7 @@
     margin-top: 16px;
     gap: 0;
 
-    color: #fff;
+    color: $white;
   }
 
   @media (max-width: 1310px) {
